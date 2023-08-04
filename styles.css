@@ -19,7 +19,7 @@
 .text {
   position: relative;
   font-family: "Roboto Mono", monospace;
-  color: white;
+  color: grey;
   font-size: 1.5em;
   --textLength: 0;
 }
@@ -40,7 +40,8 @@
   left: 0;
   width: 5px;
   background: grey;
-  animation: animate 1.5s steps(var(--textLength)) forwards;
+  animation: animate 1.5s steps(var(--textLength)) forwards,
+    blink 1.5s steps(5, start) 1.6s infinite;;
 }
 
 @keyframes animate {
@@ -48,3 +49,10 @@
     left: 100%;
   }
 }
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
